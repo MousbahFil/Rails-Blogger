@@ -1,0 +1,39 @@
+Script started on Thu 05 Mar 2015 04:08:01 PM UTC
+[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ rails console[8Pclearat >> index.html.erb[9Pd articles/at >> index.html.erblear[Krails console[Krails console[8Pclearat >> index.html.erblear[Krails console[Kc;[K[Kclear
+[H[J[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ rails g migration RenameColumnXinTableYtoZ
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20150305161709_rename_column_xin_table_yto_z.rb
+[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ rename_column :table, :old_column, :new_column[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ clear
+[H[J[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ rake db:migrate
+== 20150305161709 RenameColumnXinTableYtoZ: migrating =========================
+-- rename_column(:comments, :uthor_name, :author_name)
+   -> 0.0097s
+== 20150305161709 RenameColumnXinTableYtoZ: migrated (0.0098s) ================
+
+[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ [K[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ clear
+[H[J[01;32mmousbah125@rails-tutorial[00m:[01;34m~/workspace/blogger[00m (master) $ rails console
+Loading development environment (Rails 4.2.0)
+2.1.5 :001 > a=Article.first
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" ASC LIMIT 1[0m
+ => #<Article id: 5, title: "s1", body: "abcdad", created_at: "2015-03-04 15:26:57", updated_at: "2015-03-04 15:26:57"> 
+2.1.5 :002 > c = a.comments.new
+ => #<Comment id: nil, author_name: nil, body: nil, article_id: 5, created_at: nil, updated_at: nil> 
+2.1.5 :003 > x[Kc.author_name = "mousbah"
+ => "mousbah" 
+2.1.5 :004 > c.body = "I think this article is thhh-thhh-thupid!"c.save
+SyntaxError: (irb):4: syntax error, unexpected tIDENTIFIER, expecting end-of-input
+c.body = "I think this article is thhh-thhh-thupid!"c.save
+                                                     ^
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.0/lib/rails/commands/console.rb:110:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.0/lib/rails/commands/console.rb:9:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.0/lib/rails/commands/commands_tasks.rb:68:in `console'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.0/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/railties-4.2.0/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:274:in `require'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:274:in `block in require'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:240:in `load_dependency'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:274:in `require'
+	from /home/ubuntu/workspace/blogger/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `block in load'
+	from /usr/local/rvm/gems/ruby-2.1.5@rails4/gems/activesupport
